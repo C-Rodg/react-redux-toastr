@@ -174,8 +174,9 @@ export default class ToastrConfirm extends React.Component {
       message
     } = this.props.confirm;
     const wrapperProps = {};
+    const messageBoxProps = {};
     options.id && (wrapperProps.id = options.id);
-    options.styles && (wrapperProps.style = options.styles);
+    options.styles && (messageBoxProps.style = options.styles);
 
     return (
       <div
@@ -187,7 +188,7 @@ export default class ToastrConfirm extends React.Component {
         role="alert"
         {...wrapperProps}
       >
-        <div className="rrt-confirm animated" ref={ref => this.confirmElement = ref} role="alertdialog" aria-describedby={`dialogDesc-${this.id}`}>
+        <div className="rrt-confirm animated" ref={ref => this.confirmElement = ref} role="alertdialog" aria-describedby={`dialogDesc-${this.id}`} {...messageBoxProps}>
           {message && <div className="rrt-message" id={`dialogDesc-${this.id}`}>{message}</div>}
           {options.component && <options.component/>}
           <div className="rrt-buttons-holder">
