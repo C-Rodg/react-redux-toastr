@@ -175,6 +175,7 @@ export default class ToastrConfirm extends React.Component {
     } = this.props.confirm;
     const wrapperProps = {};
     options.id && (wrapperProps.id = options.id);
+    options.styles && (wrapperProps.style = options.styles);
 
     return (
       <div
