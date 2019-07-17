@@ -351,7 +351,7 @@ export default class ToastrBox extends React.Component {
 		}
 
 		const toastrBoxProps = {};
-		options.id && (wrapperProps.id = options.id);
+		options.id && (toastrBoxProps.id = options.id);
 		options.styles && (toastrBoxProps.style = options.styles);
 
 		return (
